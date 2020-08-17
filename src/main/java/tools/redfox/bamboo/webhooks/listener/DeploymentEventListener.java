@@ -52,7 +52,10 @@ public class DeploymentEventListener {
                         getPlan(results),
                         getBuild(results),
                         version.getName(),
-                        result.getEnvironment().getName()
+                        result.getEnvironment().getName(),
+                        version.getCreatorUserName(),
+                        version.getPlanBranchName(),
+                        result.getReasonSummary()
                 )
         );
     }
@@ -71,6 +74,9 @@ public class DeploymentEventListener {
                         getBuild(results),
                         version.getName(),
                         result.getEnvironment().getName(),
+                        version.getCreatorUserName(),
+                        version.getPlanBranchName(),
+                        result.getReasonSummary(),
                         result.getDeploymentState().toString().toUpperCase()
                 )
         );
